@@ -19,3 +19,10 @@ class Register(FlaskForm):
     username = StringField('UserName: ', validators=[DataRequired()])
     password = PasswordField('Password: ', validators=[DataRequired(), EqualTo('pass_confirm', message = 'Passwords must match.' )])
     pass_confirm = PasswordField('Confirm Password: ', validators=[DataRequired()])
+
+    def validate_email(self, field):
+        if User.query.filter_by(email=field.data).first():
+            raise ValidationError(f'{field.data} has been registered')
+    def validate_username(self, field):
+        if User.query.filter_by(username=field.data).first():
+            raise ValidationError(f'{field.data} has been registered')
