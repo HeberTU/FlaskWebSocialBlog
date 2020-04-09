@@ -1,21 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
 
-<form method="POST">
-  {{form.hidden_Tag()}}
-  {{form.email.label}}{{form.email(class="form-control")}}
-  {% for error in form.email.errors %}
-              <span>{{error}}</span>
-  {% endfor %}
-  <br>
-  {{form.username.label}}{{form.username()}}
-  <br>
-  {{form.password.label}}{{form.password()}}
-  <br>
-  {{form.pass_confirm.label}}{{form.pass_confirm()}}
-  <br>
-  {{form.submit()}}
-  <br>
-</form>
+<div class="jumbotron">
+  <h1 class="display-4" align="center">Register in Our Company</h1>
+  <form method="POST">
+      {{form.hidden_tag()}}
+      <div class="form-group">
+      {{form.email.label}}{{form.email(class="form-control", placeholder="Enter your email here")}}
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      {% for error in form.email.errors %}
+                  <span>{{error}}</span>
+      {% endfor %}
+      <br>
+      {{form.username.label}}{{form.username(class="form-control", placeholder="Enter your username here")}}
+      <br>
+      {{form.password.label}}{{form.password(class="form-control", placeholder="Enter your password here")}}
+      <br>
+      {{form.pass_confirm.label}}{{form.pass_confirm(class="form-control", placeholder="confirm your password here")}}
+      <br>
+      {{form.submit(class="btn btn-primary")}}
+      <br>
+    </form>
+    </div>
+  </div>
+
+
 
 {% endblock %}

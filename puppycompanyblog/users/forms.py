@@ -5,7 +5,7 @@ from wtforms.validators import DataRequired, Email, EqualTo
 from wtforms import  ValidationError
 from flask_wtf.file import FileField, FileAllowed
 
-from flask_login import current_user
+from flask_login import login_required ,current_user
 from puppycompanyblog.models import User
 
 
@@ -32,12 +32,13 @@ class RegistrationForm(FlaskForm):
 class UpdateForm(FlaskForm):
     email = StringField('Email: ', validators = [DataRequired(),Email()])
     username = StringField('UserName: ', validators = [DataRequired()])
-    picture = FileField('Update Profile Picturee: ', validators = [FileAllowed(['jpg','png'])])
+    picture = FileField('Choose file...', validators=[FileAllowed(['jpg', 'png'])])
     submit = SubmitField('Update')
 
     def validate_email(self, field):
         if User.query.filter_by(email=field.data).first():
             raise ValidationError(f'{field.data} has been registered')
+
     def validate_username(self, field):
         if User.query.filter_by(username=field.data).first():
             raise ValidationError(f'{field.data} has been registered')

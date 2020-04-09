@@ -1,13 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
-<form method="POST">
-  {{form.hidden_Tag()}}
-  {{form.email.label}}{{form.email()}}
-  <br>
-  {{form.password.label}}{{form.password()}}
-  <br>
-  {{form.submit()}}
-  <br>
-</form>
-
+<div class="jumbotron">
+  <h1 class="display-4" align="center">Please LogIn</h1>
+  <form method="POST">
+    {{form.hidden_tag()}}
+    <div class="form-group">
+      {{form.email.label}}{{form.email(class="form-control", placeholder="Enter your email here")}}
+      <br>
+      {{form.password.label}}{{form.password(class="form-control", placeholder="Enter your password here")}}
+      <br>
+      {{form.submit()}}
+      <br>
+    </div>
+  </form>
+</div>
 {% endblock %}
