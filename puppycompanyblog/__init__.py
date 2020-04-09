@@ -7,7 +7,7 @@ from flask_login import LoginManager
 
 
 app = Flask(__name__)
-
+app.config['SECRET_KET'] = 'mysecret'
 ######################
 ## Data Base Set-UP ##
 ######################
@@ -29,7 +29,7 @@ login_manager.login_view = 'users.login'
 
 
 from puppycompanyblog.core.views import core
-from puppycompanyblog.user.views import users
+from puppycompanyblog.users.views import users
 from puppycompanyblog.error_pages.handlers import error_pages
 
 #######################

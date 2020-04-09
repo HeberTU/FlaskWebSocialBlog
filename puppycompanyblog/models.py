@@ -37,10 +37,10 @@ class BlogPost(db.Model):
     users = db.relationship(User)
 
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.Foreignkey('users.id'), nullable = False)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable = False)
 
     date = db.Column(db.DateTime, nullable = False, default = datetime.utcnow)
-    tilte = db.Colunt(db.String(140), nullable = False)
+    tilte = db.Column(db.String(140), nullable = False)
     text = db.Column(db.Text, nullable = False)
 
     def __init__(self,tilte,text,user_id):
