@@ -2,13 +2,13 @@
 {% block content %}
 <div class="jumbotron">
   <h2 class="display-4" align="center">{{post.title}}</h2>
-  <h3 class="display-4"> {{post.author.username}} </h3>
-  <h4 class="display-4"> Published: {{post.date.strftime(%B %d, %Y)}} </h4>
+  <h4 class="display-5">Writen by: {{post.author.username}} </h3>
+  <h5 class="display-6"> Published: {{post.date.strftime("%d/%m/%y")}} </h4>
   <p>{{post.text}}</p>
 
-  {% if  post.authro==current_user%}
+  {% if  post.author==current_user %}
   <div class="">
-    <a href="{{url_for('blog_posts.update', blog_post_id=post.id)}}">Update</a>
+    <a class="btn btn-primary" href="{{url_for('blog_posts.update', blog_post_id=post.id)}}">Update</a>
     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#del_modal">Delete</button>
 
   </div>

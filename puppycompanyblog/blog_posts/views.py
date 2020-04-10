@@ -48,9 +48,9 @@ def update(blog_post_id):
         blog_post.text = form.text.data
         db.session.commit()
         flash('Blog Post Updated')
-        return redirect(url_for('blog_posts.blog_post', blog_post_id=blog_posts.id))
+        return redirect(url_for('blog_posts.blog_post', blog_post_id=blog_post.id))
 
-    elif request.method = 'GET':
+    elif request.method == 'GET':
         form.title.data = blog_post.title
         form.text.data = blog_post.text
 
@@ -67,4 +67,4 @@ def delete_post(blog_post_id):
     db.session.delete(blog_post)
     db.session.commit()
     flash('Blog Post Deleted')
-    return redirect(url_for('core.idex'))
+    return redirect(url_for('core.index'))
