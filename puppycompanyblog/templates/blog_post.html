@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron">
+  <h2 class="display-4" align="center">{{post.title}}</h2>
+  <h3 class="display-4"> {{post.author.username}} </h3>
+  <h4 class="display-4"> Published: {{post.date.strftime(%B %d, %Y)}} </h4>
+  <p>{{post.text}}</p>
+
+  {% if  post.authro==current_user%}
+  <div class="">
+    <a href="{{url_for('blog_posts.update', blog_post_id=post.id)}}">Update</a>
+    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#del_modal">Delete</button>
+
+  </div>
+  {% endif %}
+
+</div>
+<div class="modal" tabindex="-1" role="dialog" id="del_modal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Delete post?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to delete the post?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+
+        <form action="{{url_for('blog_posts.delete_post',blog_post_id=post.id)}}" method="POST">
+          <input type="submit"  class="btn btn-danger" value="Confirme Delete">
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
