@@ -7,10 +7,10 @@ General functionalities index:
   * Home,
   * Info
 
-  * Users
-    * Register,
-    * login using hashed password,
-    * Update profile information.
+* Users
+  * Register,
+  * login using hashed password,
+  * Update profile information.
 
 
 * Blog Posts
