@@ -8,7 +8,7 @@ General functionalities index:
   * Info
 
 * Blog Posts
-  * Create Blog Post,
+  * Create Post,
   * View Post,
   * Delete/update Post
 
@@ -18,7 +18,31 @@ General functionalities index:
   * login using hashed password,
   * Update profile information.
 
+## Core
 
+### Home
+
+![Home](https://user-images.githubusercontent.com/28582065/79011938-74389500-7b65-11ea-9070-f3c1c79e5a9e.PNG)
+
+### Info
+
+![Info](https://user-images.githubusercontent.com/28582065/79011957-7dc1fd00-7b65-11ea-9146-55cfe2360224.PNG)
+
+## Blog Posts
+
+### Create Post
+
+![createPost](https://user-images.githubusercontent.com/28582065/79011988-8dd9dc80-7b65-11ea-9d1f-7c0884dca799.PNG)
+
+### View Post
+
+![Post_OU](https://user-images.githubusercontent.com/28582065/79012010-98947180-7b65-11ea-8d44-28857b8ae876.PNG)
+
+### Delete/update Post
+
+Only for the author of that post
+
+![Post](https://user-images.githubusercontent.com/28582065/79012076-beba1180-7b65-11ea-8d67-367e5f5b2634.PNG)
 
 ## Users
 
@@ -42,4 +66,4 @@ Here is how it looks the login section of the website
 
 Here is how it looks at the account info & update section of the website
 
-![Update](https://user-images.githubusercontent.com/28582065/78935918-ea79c080-7aad-11ea-8873-24474f127830.PNG)
+![UserePage](https://user-images.githubusercontent.com/28582065/79012108-cbd70080-7b65-11ea-9a13-18c47b07262b.PNG)
